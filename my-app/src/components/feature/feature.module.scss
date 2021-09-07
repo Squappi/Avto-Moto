@@ -1,0 +1,20 @@
+.list {
+  width: 565px;
+  margin-left: 6px;
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #D7D9DF;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #48494D;
+}

@@ -1,0 +1,56 @@
+
+.reviews {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #D12136;
+  background-color: #FFFFFF;
+  border: 1px solid #D12136;
+  padding: 14px 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  margin-right: 12px;
+  letter-spacing: 1px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #48494D;
+  margin-top: -51px;
+  margin-left: 5px;
+}
+
+.header,
+.header_comment {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 12px;
+  margin-left: 25px;
+}
+
+.header_comment {
+  margin-left: 6px;
+}
+
+.text,
+.text_comment {
+  font-size: 15px;
+  line-height: 20px;
+  margin-left: 25px;
+  margin-top: -6px;
+}
+
+.text_comment {
+  margin-top: -7px;
+  margin-left: 6px;
+}
+
