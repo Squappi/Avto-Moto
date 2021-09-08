@@ -4,6 +4,23 @@
   justify-content: flex-start;
 }
 
+.image_wrapper {
+  position: relative;
+}
+
+.image_mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 7px 28px 8px 28px;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #D12136;
+}
+
 .gallery {
   padding: 0 calc(50% - 591px);
   margin-bottom: 85px;

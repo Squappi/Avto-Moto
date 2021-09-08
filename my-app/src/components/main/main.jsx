@@ -38,7 +38,10 @@ function Main() {
         <div className={styles.gallery}>
           
           <div className={styles.container}>
-            <div className="gallery__image-wrapper">
+            <div className={styles.image_wrapper}>
+              <div className={styles.image_mark}>
+                <span className={styles.image_mark_text}>new model</span>
+              </div>
               <div className={styles.huge}>
                 <img className="gallety__huge-image" src={images[currentImageIndex]} width="600" height="375" alt=""/>
               </div>

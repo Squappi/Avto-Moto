@@ -14,12 +14,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 12;
 }
 
 .case {
   width: 695px;
   height: 414px;
   background-color: #F5F5F9;
+  position: relative;
 }
 
 .header {
@@ -46,9 +48,19 @@
 }
 
 .input {
-  width: 292px;
+  width: 270px;
   height: 46px;
-  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 25px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(72, 73, 77, 0.2);
+}
+
+.input::placeholder {
+  font-size: 15px;
+  line-height: 19px;
+  color: #48494D;
 }
 
 .form_container {
@@ -57,14 +69,88 @@
   flex-wrap: wrap;
 }
 
+.error {
+  font-size: 14px;
+  line-height: 19px;
+  color: #FF0000;
+  height: 19px;
+}
+
+.dirty_error {
+  border: 1px solid #FF0000;
+}
+
+.rating_case {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 297px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 18px;
+}
+
+.rating_star {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: -5px;
+}
+
 .textarea {
   width: 294px;
-  height: 114px;
-  margin-top: 43px;
+  height: 99px;
+  border: 1px solid rgba(72, 73, 77, 0.2);
+  font-size: 16px;
+  line-height: 19px;
+  padding-top: 14px;
+  padding-left: 22px;
+}
+
+.textarea::placeholder {
+  font-size: 16px;
+  line-height: 19px;
+  // padding-left: 22px;
+  color:#48494D;
 }
 
 .button_wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 16.5px 16px;
+  background-color: #D12136;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #FFFFFF;
+  border: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.close {
+  position: absolute;
+  width: 15px;
+  height: 16px;
+  top: 20px;
+  right: 24px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.close::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  background-image: url('../../img/close.svg');
+  background-repeat: no-repeat;
 }

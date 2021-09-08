@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 786px;
+}
+
+.addres {
+  width: 252px;
+}
+
+.header {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #1A212F;
+  margin: 0;
+  margin-top: 8px;
+  margin-left: 6px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin: 0;
+  margin-left: 6px;
+  margin-bottom: 24px;
+}
+
+.map {
+  border: none;
+}

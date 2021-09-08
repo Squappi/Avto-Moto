@@ -127,6 +127,11 @@
   letter-spacing: 1px;
 }
 
+.application:hover,
+.application:focus {
+  background-color: #BD0C21;
+}
+
 .credit {
   font-size: 14px;
   line-height: 19px;
@@ -138,4 +143,10 @@
   color: #D12136;
   background-color: #FFFFFF;
   letter-spacing: 2px;
+}
+
+.credit:hover,
+.credit:focus {
+  background-color: #D12136;
+  color: #FFFFFF;
 }
