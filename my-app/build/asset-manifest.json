@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7521e0cd.chunk.css",
+    "main.js": "/static/js/main.d668c74f.chunk.js",
+    "main.js.map": "/static/js/main.d668c74f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.94b6a6e8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.94b6a6e8.js.map",
+    "static/js/2.addfc732.chunk.js": "/static/js/2.addfc732.chunk.js",
+    "static/js/2.addfc732.chunk.js.map": "/static/js/2.addfc732.chunk.js.map",
+    "static/js/3.64f9f0b1.chunk.js": "/static/js/3.64f9f0b1.chunk.js",
+    "static/js/3.64f9f0b1.chunk.js.map": "/static/js/3.64f9f0b1.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.7521e0cd.chunk.css.map": "/static/css/main.7521e0cd.chunk.css.map",
+    "static/js/2.addfc732.chunk.js.LICENSE.txt": "/static/js/2.addfc732.chunk.js.LICENSE.txt",
+    "static/media/app.module.scss": "/static/media/OpenSans-SemiBold.1232ba75.woff",
+    "static/media/reviews.module.scss": "/static/media/star-active.80a51f89.svg",
+    "static/media/car.3d71379a.png": "/static/media/car.3d71379a.png",
+    "static/media/popup.module.scss": "/static/media/close.17d2d705.svg",
+    "static/media/description-product.module.scss": "/static/media/volume.37b135b1.svg",
+    "static/media/salon.401f2421.png": "/static/media/salon.401f2421.png",
+    "static/media/speedometr.4a912151.png": "/static/media/speedometr.4a912151.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.94b6a6e8.js",
+    "static/js/2.addfc732.chunk.js",
+    "static/css/main.7521e0cd.chunk.css",
+    "static/js/main.d668c74f.chunk.js"
+  ]
+}
