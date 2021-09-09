@@ -3,7 +3,7 @@ import footer from './foother.module.scss';
 
 function Foother() {
   return(
-    <footer className="footer">
+    <footer>
       <section className={footer.clients}>
         <ul className={footer.list}>
           <li className={footer.item}>Корпоративным клиентам</li>

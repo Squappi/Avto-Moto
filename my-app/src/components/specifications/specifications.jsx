@@ -61,7 +61,7 @@ function Specifications() {
   
 
   return(
-    <section className="specifications">
+    <section>
       <div className={specifications.wrapper}>
         <div className={specifications.case}>
           <ul className={specifications.list}>

@@ -1,11 +1,11 @@
+.nav {
+  width: 44%;
+}
+
 .list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.item {
-  margin-right: 73px;
 }
 
 .item:last-child {

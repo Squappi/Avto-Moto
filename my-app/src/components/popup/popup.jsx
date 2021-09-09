@@ -50,7 +50,7 @@ function Popup({active, setActive}) {
 
   function addToHistory(evt) {
     evt.preventDefault();
-    if(name.length > 2 && comment.length > 10) {
+    if(name.length > 0 && comment.length > 0) {
       const result = [...JSON.parse(localStorage.getItem('history'))];
       result.push({
         name: name,
@@ -62,6 +62,9 @@ function Popup({active, setActive}) {
       });
       localStorage.setItem('history', JSON.stringify(result));
       clearForm();
+    } else {
+      setNameDirty(true);
+      setCommentDirty(true);
     }
   }
 
@@ -76,11 +79,12 @@ function Popup({active, setActive}) {
         >
           <div className={popup.form_case}>
             <div className={popup.form_wrapper}>
-              <label className={popup.error}>{(nameDirty) ? nameValidError : ''}</label>
+              <label htmlFor="name" className={popup.error}>{(nameDirty) ? nameValidError : ''}</label>
               <input className={`${popup.input} ${(nameDirty) ? popup.dirty_error : ''}`} 
                   type="text"
                   placeholder="Имя"
                   name="name"
+                  id="name"
                   value={name}
                   onBlur={(e) => blurHandler(e)}
                   onChange={(evt) => {
@@ -89,16 +93,24 @@ function Popup({active, setActive}) {
                 }}
               />
 
-              <label className={popup.visually_hidden}></label>
-              <input className={popup.input} type="text" placeholder="Достоинства"
+              <label htmlFor="worth" className={popup.visually_hidden}></label>
+              <input className={popup.input}
+                type="text"
+                id="worth"
+                value={dignity}
+                placeholder="Достоинства"
                 onChange={(evt) => {
                   const target = evt.target.value;
                   setDignity(target);
                 }}
               />
 
-              <label className={popup.visually_hidden}></label>
-              <input className={popup.input} type="text" placeholder="Недостатки"
+              <label htmlFor="limitations" className={popup.visually_hidden}></label>
+              <input className={popup.input}
+                type="text"
+                placeholder="Недостатки"
+                id="limitations"
+                value={limitations}
                 onChange={(evt) => {
                   const target = evt.target.value;
                   setLimitations(target);
@@ -108,7 +120,7 @@ function Popup({active, setActive}) {
 
             <div className={popup.form_container}>
               <div className={popup.rating_case}>
-                <label className={popup.rating}>Оцените товар:</label>
+                <label htmlFor="starNumber" className={popup.rating}>Оцените товар:</label>
                 <div className={popup.rating_star}
                   onChange={(evt) => {
                     const target = evt.target.value;
@@ -128,10 +140,11 @@ function Popup({active, setActive}) {
                 })} 
                 </div>
               </div>
-              <label className={popup.error}>{(commentDirty) ? commentError : ''}</label>
-              <textarea className={popup.textarea} 
+              <label htmlFor="textarea" className={popup.error}>{(commentDirty) ? commentError : ''}</label>
+              <textarea className={`${popup.textarea} ${(commentDirty) ? popup.dirty_error : ''}`} 
                 placeholder="Комментарий"
                 name="textarea"
+                id="textarea"
                 value={comment}
                 onBlur={(e) => blurHandler(e)}
                 onChange={(evt) => {
