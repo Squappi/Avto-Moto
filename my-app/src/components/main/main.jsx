@@ -27,7 +27,7 @@ function Main() {
                 <span className={styles.image_mark_text}>new model</span>
               </div>
               <div className={styles.huge}>
-                <img src={images[currentImageIndex]} width="600" height="375" alt=""/>
+                <img className={styles.image} src={images[currentImageIndex]} width="600" height="375" alt=""/>
               </div>
 
               <div className={styles.image_list}>

@@ -63,8 +63,8 @@ function Popup({active, setActive}) {
       localStorage.setItem('history', JSON.stringify(result));
       clearForm();
     } else {
-      setNameDirty(true);
-      setCommentDirty(true);
+      setNameDirty(name.length === 0);
+      setCommentDirty(comment.length === 0);
     }
   }
 
@@ -79,7 +79,7 @@ function Popup({active, setActive}) {
         >
           <div className={popup.form_case}>
             <div className={popup.form_wrapper}>
-              <label htmlFor="name" className={popup.error}>{(nameDirty) ? nameValidError : ''}</label>
+              <label htmlFor="name" className={`${popup.error} ${popup.icon_name}`}>{(nameDirty) ? nameValidError : ''}</label>
               <input className={`${popup.input} ${(nameDirty) ? popup.dirty_error : ''}`} 
                   type="text"
                   placeholder="Имя"
