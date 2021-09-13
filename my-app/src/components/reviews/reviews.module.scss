@@ -1,7 +1,11 @@
+.wrapper {
+  max-width: 100%;
+}
+
 .reviews_case {
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 16px;
-  margin-bottom: 73px;
+  margin-bottom: 77px;
 }
 
 .reviews {
@@ -81,6 +85,7 @@
 .text_comment {
   margin-top: -7px;
   margin-left: 6px;
+  overflow: hidden;
 }
 
 .evaluation {

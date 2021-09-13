@@ -1,5 +1,5 @@
 import React from 'react';
-import './app.module.scss';
+import styles from './app.module.scss';
 import Header from '../header/header';
 import Main from '../main/main';
 import Foother from '../foother/foother';
@@ -11,9 +11,11 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route>
-            <Header/>
-            <Main/>
-            <Foother/>
+            <div className={styles.body_wrapper}>
+              <Header/>
+              <Main/>
+              <Foother/>
+            </div>
           </Route>
         </Switch>
       </BrowserRouter>

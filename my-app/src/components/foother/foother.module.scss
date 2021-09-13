@@ -7,8 +7,8 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding-top: 28px;
+  width: 110%;
 }
 
 .item {
@@ -16,4 +16,19 @@
   line-height: 22px;
   font-weight: 600px;
   color: #48494D;
+  margin-right: 5%;
+}
+
+.item:hover {
+  color: #D12136;
+}
+
+.item:last-child {
+  margin: 0;
+}
+
+@media(max-width: 1180px) {
+  .clients {
+    margin: 0 10px;
+  }
 }

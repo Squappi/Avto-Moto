@@ -23,7 +23,7 @@
 }
 
 .gallery {
-  padding: 0 calc(50% - 591px);
+  padding: 0px calc(50% - 591px);
   margin-bottom: 85px;
 }
 
@@ -32,16 +32,21 @@
 }
 
 .image {
-  width: 100%;
+  width: 107%;
   height: auto;
 } 
 
 .image_list {
-  width: 100%;
+  width: 108%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.image_left:hover,
+.image_right:hover {
+  opacity: .5;
 }
 
 .gallery_list {
@@ -66,3 +71,8 @@
   outline: none;
 }
 
+@media(max-width: 1180px) {
+  .gallery {
+    margin: 0 10px;
+  }
+}

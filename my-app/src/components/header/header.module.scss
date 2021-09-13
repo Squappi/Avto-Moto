@@ -34,3 +34,9 @@
   margin-top: 5px;
   margin-left: 23px;
 }
+
+@media(max-width: 1180px) {
+  .wrapper {
+    margin: 0 10px;
+  }
+}

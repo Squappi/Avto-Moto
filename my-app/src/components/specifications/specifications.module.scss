@@ -40,3 +40,9 @@
   border: none;
   width: 197px;
 }
+
+@media(max-width: 1180px) {
+  .wrapper {
+    margin: 0 10px;
+  }
+}

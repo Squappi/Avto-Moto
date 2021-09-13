@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RatingComponent from '../rating-component/rating-component';
 import popup from './popup.module.scss';
 import dayjs from 'dayjs';
@@ -37,6 +37,7 @@ function Popup({active, setActive}) {
     setRating(Number(value));
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function clearForm() {
     setActive(false);
     setName('');
@@ -67,6 +68,21 @@ function Popup({active, setActive}) {
       setCommentDirty(comment.length === 0);
     }
   }
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = active ? 'hidden' : 'auto';
+
+    const handleEsc = (event) => {
+      if (event.keyCode === 27 || event.keyCode === 88) {
+        clearForm();
+     }
+   };
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [active, clearForm]);
 
   return(
     <div className={active ? popup.wrapper_active : popup.wrapper} onClick={(e) => {

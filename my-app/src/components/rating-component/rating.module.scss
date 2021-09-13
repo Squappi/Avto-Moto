@@ -19,7 +19,7 @@
 .label:hover ~ .label .image,
 .visually_hidden:focus ~ .label .image,
 .visually_hidden:checked ~ .label .image {
-  fill: red;
+  fill: #D12136;
 }
 
 .image {

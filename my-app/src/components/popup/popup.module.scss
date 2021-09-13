@@ -42,6 +42,10 @@
   margin-top: 27px;
 }
 
+.form {
+  border: none;
+}
+
 .form_wrapper {
   display: flex;
   flex-direction: column;
@@ -115,6 +119,8 @@
   line-height: 19px;
   padding-top: 14px;
   padding-left: 22px;
+  resize: none;
+  outline: #FF0000;
 }
 
 .textarea::placeholder {

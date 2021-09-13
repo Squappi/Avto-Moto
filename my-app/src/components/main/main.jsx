@@ -16,7 +16,7 @@ function Main() {
   const images = [car,salon,speedometr];
 
   return(
-    <main>
+    <main className={styles.page}>
     <h1 className={styles_app.hidden}>Автомобили</h1>
       <section className={styles.description}>
         <div className={styles.gallery}>
@@ -32,7 +32,7 @@ function Main() {
 
               <div className={styles.image_list}>
                 <button onClick={() => setCurrentImageIndex(currentImageIndex - 1)} className={styles.swiper_left} disabled={currentImageIndex === 0}>
-                  <img src={(currentImageIndex === 0) ? left : left_active} alt="left"/>
+                  <img className={styles.image_left} src={(currentImageIndex === 0) ? left : left_active} alt="left"/>
                 </button>
                 <ul className={styles.gallery_list}>
                   {images.map((image, index) => {
@@ -44,7 +44,7 @@ function Main() {
                   })}
                 </ul>
                 <button onClick={() => setCurrentImageIndex(currentImageIndex + 1)} className={styles.swiper_right} disabled={currentImageIndex === images.length - 1}>
-                  <img src={(currentImageIndex === images.length - 1) ? right_active : right} alt="left"/>
+                  <img className={styles.image_right} src={(currentImageIndex === images.length - 1) ? right_active : right} alt="left"/>
                 </button>
               </div>
             </div>

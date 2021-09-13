@@ -9,24 +9,21 @@ function Specifications() {
   const [activeTab, setActiveTab] = useState('specification');
 
   function tabClick(evt) {
-    if(evt.key === 'Tab') {
-      evt.preventDefault();
-      switch(activeTab) {
-        case Tab.REVIEWS:
-          setActiveTab(Tab.CONTACTS);
-          break;
-        case Tab.CONTACTS:
-          setActiveTab(Tab.SPECIFICATION);
-          break;
-        default:
-          setActiveTab(Tab.REVIEWS);
-          break;
-      }
+    switch(evt.target.name) {
+      case Tab.REVIEWS:
+        setActiveTab(Tab.REVIEWS);
+        break;
+      case Tab.CONTACTS:
+        setActiveTab(Tab.CONTACTS);
+        break;
+      default:
+        setActiveTab(Tab.SPECIFICATION);
+        break;
     }
-  } 
+  }
 
   useEffect(() => {
-    window.onkeydown = tabClick;
+    // window.onkeydown = tabClick;
   });
 
   const Tab = {
@@ -65,9 +62,13 @@ function Specifications() {
       <div className={specifications.wrapper}>
         <div className={specifications.case}>
           <ul className={specifications.list}>
-            <li className={`${specifications.button} ${activeTab === Tab.SPECIFICATION && specifications.button_active}`}>
+            <li className={`${specifications.button} ${activeTab === Tab.SPECIFICATION && specifications.button_active}`}
+             id={Tab.SPECIFICATION}
+             >
               <Link 
                 to='#'
+                tabIndex="0"
+                onFocus={tabClick}
                 name={Tab.SPECIFICATION}
                 onClick={(evt) => {
                   setActiveTab(evt.target.name);
@@ -76,8 +77,12 @@ function Specifications() {
                 Характеристики
               </Link>
             </li>
-            <li className={`${specifications.button} ${activeTab === Tab.REVIEWS && specifications.button_active}`}>
+            <li className={`${specifications.button} ${activeTab === Tab.REVIEWS && specifications.button_active}`}
+             id={Tab.REVIEWS}
+             >
               <Link to='#'
+              onFocus={tabClick}
+              tabIndex="0" 
                 name={Tab.REVIEWS}
                   onClick={(evt) => {
                     setActiveTab(evt.target.name);
@@ -86,9 +91,13 @@ function Specifications() {
                 Отзывы
               </Link>
             </li>
-            <li className={`${specifications.button} ${activeTab === Tab.CONTACTS && specifications.button_active}`}>
+            <li className={`${specifications.button} ${activeTab === Tab.CONTACTS && specifications.button_active}`}
+              id={Tab.CONTACTS}
+              >
               <Link 
                 to='#'
+                tabIndex="0" 
+                onFocus={tabClick}
                 name={Tab.CONTACTS}
                 onClick={(evt) => {
                   setActiveTab(evt.target.name);
