@@ -17,6 +17,6 @@
   color: #D12136;
 }
 
-.item:last-child {
+.item:nth-child(4n) {
   margin-right: 0;
 }

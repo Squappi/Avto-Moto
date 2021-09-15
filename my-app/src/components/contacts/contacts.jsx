@@ -11,9 +11,9 @@ function Contacts() {
         <h2 className={contacts.header}>Режим работы</h2>
         <p className={contacts.text}>Ежедневно, с 10:00 до 21:00</p>
         <h2 className={contacts.header}>Телефон</h2>
-        <a className={contacts.text} href="tel:88001112233">8 (800) 333-55-99</a>
+        <a className={contacts.text} tabIndex="4" href="tel:88001112233">8 (800) 333-55-99</a>
         <h2 className={contacts.header}>E-mail</h2>
-        <a href="mailto:info@avto-moto.ru" className={contacts.text}>info@avto-moto.ru</a>
+        <a href="mailto:info@avto-moto.ru" tabIndex="4" className={contacts.text}>info@avto-moto.ru</a>
       </div>
       <div className={contacts.cart}>
         <Iframe
@@ -22,7 +22,8 @@ function Contacts() {
           width="431" 
           height="271" 
           allowfullscreen="fullscreen"
-          loading="lazy"  
+          loading="lazy"
+          tabIndex="4" 
         />
       </div>
     </div>

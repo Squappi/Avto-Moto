@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import RatingComponent from '../rating-component/rating-component';
 import popup from './popup.module.scss';
 import dayjs from 'dayjs';
+const FocusTrap = require('focus-trap-react');
 
 const STARS_COUNT = 5;
 
@@ -74,7 +75,7 @@ function Popup({active, setActive}) {
     body.style.overflow = active ? 'hidden' : 'auto';
 
     const handleEsc = (event) => {
-      if (event.keyCode === 27 || event.keyCode === 88) {
+      if (event.keyCode === 27) {
         clearForm();
      }
    };
@@ -86,105 +87,107 @@ function Popup({active, setActive}) {
 
   return(
     <div className={active ? popup.wrapper_active : popup.wrapper} onClick={(e) => {
-        clearForm();
-      }}>
-      <div className={popup.case} onClick={(evt) => evt.stopPropagation()}>
-        <h2 className={popup.header}>Оставить отзыв</h2>
-        <form className={popup.form} action="/#" method="post"
-          onSubmit={(evt) => {evt.preventDefault()}}
-        >
-          <div className={popup.form_case}>
-            <div className={popup.form_wrapper}>
-              <label htmlFor="name" className={`${popup.error} ${popup.icon_name}`}>{(nameDirty) ? nameValidError : ''}</label>
-              <input className={`${popup.input} ${(nameDirty) ? popup.dirty_error : ''}`} 
+          clearForm();
+        }}>
+        <div className={popup.case} onClick={(evt) => evt.stopPropagation()}>
+          <h2 className={popup.header}>Оставить отзыв</h2>
+          {(active) ? <FocusTrap>
+          <form className={popup.form} action="/#" method="post"
+            onSubmit={(evt) => {evt.preventDefault()}}
+          >
+            <div className={popup.form_case}>
+              <div className={popup.form_wrapper}>
+                <label htmlFor="name" className={`${popup.error} ${popup.icon_name}`}>{(nameDirty) ? nameValidError : ''}</label>
+                <input className={`${popup.input} ${(nameDirty) ? popup.dirty_error : ''}`} 
+                    type="text"
+                    placeholder="Имя"
+                    name="name"
+                    id="name"
+                    value={name}
+                    onBlur={(e) => blurHandler(e)}
+                    onChange={(evt) => {
+                    const target = evt.target.value;
+                    setName(target);
+                  }}
+                />
+
+                <label htmlFor="worth" className={popup.visually_hidden}></label>
+                <input className={popup.input}
                   type="text"
-                  placeholder="Имя"
-                  name="name"
-                  id="name"
-                  value={name}
-                  onBlur={(e) => blurHandler(e)}
-                  onChange={(evt) => {
-                  const target = evt.target.value;
-                  setName(target);
-                }}
-              />
-
-              <label htmlFor="worth" className={popup.visually_hidden}></label>
-              <input className={popup.input}
-                type="text"
-                id="worth"
-                value={dignity}
-                placeholder="Достоинства"
-                onChange={(evt) => {
-                  const target = evt.target.value;
-                  setDignity(target);
-                }}
-              />
-
-              <label htmlFor="limitations" className={popup.visually_hidden}></label>
-              <input className={popup.input}
-                type="text"
-                placeholder="Недостатки"
-                id="limitations"
-                value={limitations}
-                onChange={(evt) => {
-                  const target = evt.target.value;
-                  setLimitations(target);
-                }}
-              />
-            </div>
-
-            <div className={popup.form_container}>
-              <div className={popup.rating_case}>
-                <label htmlFor="starNumber" className={popup.rating}>Оцените товар:</label>
-                <div className={popup.rating_star}
+                  id="worth"
+                  value={dignity}
+                  placeholder="Достоинства"
                   onChange={(evt) => {
                     const target = evt.target.value;
-                    setRating(Number(target));
+                    setDignity(target);
                   }}
-                >
-                {Array.from({length: STARS_COUNT}).map((_, index) => {
-                  const starNumber = STARS_COUNT - index;
-                  return(
-                      <RatingComponent
-                        key={starNumber}
-                        starNumber={starNumber}
-                        userRating={rating}
-                        handleChangeRating={handleChangeRating}
-                      />
-                  );
-                })} 
-                </div>
+                />
+
+                <label htmlFor="limitations" className={popup.visually_hidden}></label>
+                <input className={popup.input}
+                  type="text"
+                  placeholder="Недостатки"
+                  id="limitations"
+                  value={limitations}
+                  onChange={(evt) => {
+                    const target = evt.target.value;
+                    setLimitations(target);
+                  }}
+                />
               </div>
-              <label htmlFor="textarea" className={popup.error}>{(commentDirty) ? commentError : ''}</label>
-              <textarea className={`${popup.textarea} ${(commentDirty) ? popup.dirty_error : ''}`} 
-                placeholder="Комментарий"
-                name="textarea"
-                id="textarea"
-                value={comment}
-                onBlur={(e) => blurHandler(e)}
-                onChange={(evt) => {
-                  const target = evt.target.value;
-                  setComment(target);
-                }}
-              />
+
+              <div className={popup.form_container}>
+                <div className={popup.rating_case}>
+                  <label htmlFor="starNumber" className={popup.rating}>Оцените товар:</label>
+                  <div className={popup.rating_star}
+                    onChange={(evt) => {
+                      const target = evt.target.value;
+                      setRating(Number(target));
+                    }}
+                  >
+                  {Array.from({length: STARS_COUNT}).map((_, index) => {
+                    const starNumber = STARS_COUNT - index;
+                    return(
+                        <RatingComponent
+                          key={starNumber}
+                          starNumber={starNumber}
+                          userRating={rating}
+                          handleChangeRating={handleChangeRating}
+                        />
+                    );
+                  })} 
+                  </div>
+                </div>
+                <label htmlFor="textarea" className={popup.error}>{(commentDirty) ? commentError : ''}</label>
+                <textarea className={`${popup.textarea} ${(commentDirty) ? popup.dirty_error : ''}`} 
+                  placeholder="Комментарий"
+                  name="textarea"
+                  id="textarea"
+                  value={comment}
+                  onBlur={(e) => blurHandler(e)}
+                  onChange={(evt) => {
+                    const target = evt.target.value;
+                    setComment(target);
+                  }}
+                />
+              </div>
             </div>
-          </div>
-          <div className={popup.button_wrapper}>
+            <div className={popup.button_wrapper}>
+              <button 
+                className={popup.button} 
+                onClick={addToHistory}
+              >Оставить отзыв</button>
+            </div>
             <button 
-              className={popup.button} 
-              onClick={addToHistory}
-            >Оставить отзыв</button>
-          </div>
-          <button 
-            className={popup.close} onClick={() => {
-              clearForm();
-            }}
-            type="button" 
-            aria-label="закрыть"></button>
-        </form>
+              className={popup.close} onClick={() => {
+                clearForm();
+              }}
+              type="button" 
+              aria-label="закрыть"></button>
+          </form>
+        </FocusTrap> : null}
+        </div>
       </div>
-    </div>
   );
 }
 

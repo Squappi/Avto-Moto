@@ -13,6 +13,11 @@
 
 .label {
   margin-left: 7px;
+  cursor: pointer;
+}
+
+.image {
+  fill: #BDBEC2;
 }
 
 .label:hover .image,
@@ -20,8 +25,4 @@
 .visually_hidden:focus ~ .label .image,
 .visually_hidden:checked ~ .label .image {
   fill: #D12136;
-}
-
-.image {
-  fill: #BDBEC2;
 }

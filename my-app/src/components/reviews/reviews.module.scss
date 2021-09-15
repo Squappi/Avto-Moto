@@ -27,6 +27,7 @@
   margin-right: 12px;
   letter-spacing: 1px;
   z-index: 11;
+  cursor: pointer;
 }
 
 .name {
@@ -86,6 +87,8 @@
   margin-top: -7px;
   margin-left: 6px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: content-box;
 }
 
 .evaluation {
@@ -160,6 +163,7 @@
   color: #D12136;
   border: none;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 
 .text_rating  {

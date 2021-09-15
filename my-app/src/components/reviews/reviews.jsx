@@ -14,7 +14,7 @@ function Reviews() {
   return(
     <div className={styles.wrapper}>
       <div className={styles.reviews}>
-        <button className={styles.button} onClick={() => setModalActive(true)}>оставить отзыв</button>
+        <button className={styles.button} onClick={() => setModalActive(true)} tabIndex="3" >оставить отзыв</button>
       </div>
       { [...JSON.parse(localStorage.getItem('history'))].map((review, index) => {
         return (
@@ -48,7 +48,7 @@ function Reviews() {
               </div>
               <div className={styles.date_comment}>
                 <time className={styles.date}>{dayjs(review.date).fromNow()}</time>
-                <button className={styles.answer}>Ответить</button>
+                <button className={styles.answer} tabIndex="3">Ответить</button>
               </div>
             </div>
           </div>)

@@ -10,10 +10,6 @@ function Header() {
         <div className={styles.wrapper}>
           <div className={styles.logo} href="/#">
             <img src={logo} alt="car"></img>
-            <div className={styles.case}>
-              <span className={styles.text}>AVTO</span>
-              <span className={styles.modificate}>MOTO</span>
-            </div>
           </div>
           <nav className={styles_nav.nav}>
             <ul className={styles_nav.list}>

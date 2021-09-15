@@ -64,45 +64,45 @@ function Specifications() {
           <ul className={specifications.list}>
             <li className={`${specifications.button} ${activeTab === Tab.SPECIFICATION && specifications.button_active}`}
              id={Tab.SPECIFICATION}
+             onClick={(evt) => {
+                setActiveTab(evt.target.id ? evt.target.id : evt.target.name);
+            }}
              >
               <Link 
                 to='#'
-                tabIndex="0"
+                tabIndex="1"
                 onFocus={tabClick}
                 name={Tab.SPECIFICATION}
-                onClick={(evt) => {
-                  setActiveTab(evt.target.name);
-                }}
                 >
                 Характеристики
               </Link>
             </li>
             <li className={`${specifications.button} ${activeTab === Tab.REVIEWS && specifications.button_active}`}
              id={Tab.REVIEWS}
+              onClick={(evt) => {
+                setActiveTab(evt.target.id ? evt.target.id : evt.target.name);
+              }}
              >
               <Link to='#'
               onFocus={tabClick}
-              tabIndex="0" 
-                name={Tab.REVIEWS}
-                  onClick={(evt) => {
-                    setActiveTab(evt.target.name);
-                  }}
-                >
+              tabIndex="2" 
+              name={Tab.REVIEWS}
+              >
                 Отзывы
               </Link>
             </li>
             <li className={`${specifications.button} ${activeTab === Tab.CONTACTS && specifications.button_active}`}
               id={Tab.CONTACTS}
+              onClick={(evt) => {
+                setActiveTab(evt.target.id ? evt.target.id : evt.target.name);
+              }}
               >
               <Link 
                 to='#'
-                tabIndex="0" 
+                tabIndex="4" 
                 onFocus={tabClick}
                 name={Tab.CONTACTS}
-                onClick={(evt) => {
-                  setActiveTab(evt.target.name);
-                }}
-                >
+              >
                 Контакты
               </Link>
             </li>
