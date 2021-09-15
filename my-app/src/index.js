@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './components/app/app.jsx';
 import reportWebVitals from './reportWebVitals';
 
-if(!localStorage.getItem('history')) {
+if(!localStorage.getItem('history') || [...JSON.parse(localStorage.getItem('history'))].length === 0) {
   localStorage.setItem('history', JSON.stringify([{
     name: 'Борис Иванов',
     dignity: 'мощность, внешний вид',
