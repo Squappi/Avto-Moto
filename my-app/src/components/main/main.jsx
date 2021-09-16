@@ -31,7 +31,7 @@ function Main() {
               </div>
 
               <div className={styles.image_list}>
-                <button onClick={() => setCurrentImageIndex(currentImageIndex - 1)} className={styles.swiper_left} disabled={currentImageIndex === 0}>
+                <button tabIndex="1" onClick={() => setCurrentImageIndex(currentImageIndex - 1)} className={styles.swiper_left} disabled={currentImageIndex === 0}>
                   <img className={styles.image_left} src={(currentImageIndex === 0) ? left : left_active} alt="left"/>
                 </button>
                 <ul className={styles.gallery_list}>
@@ -43,7 +43,7 @@ function Main() {
                     );
                   })}
                 </ul>
-                <button onClick={() => setCurrentImageIndex(currentImageIndex + 1)} className={styles.swiper_right} disabled={currentImageIndex === images.length - 1}>
+                <button tabIndex="1" onClick={() => setCurrentImageIndex(currentImageIndex + 1)} className={styles.swiper_right} disabled={currentImageIndex === images.length - 1}>
                   <img className={styles.image_right} src={(currentImageIndex === images.length - 1) ? right_active : right} alt="left"/>
                 </button>
               </div>
@@ -62,8 +62,8 @@ function Main() {
                 <p className={styles_description.price_modificate}>2  400 000 ₽</p>
               </div>
               <div className={styles_description.button}>
-                <button className={styles_description.application}>оставить заявку</button>
-                <button className={styles_description.credit}>в кредит от 11 000 ₽</button>
+                <button tabIndex="1" className={styles_description.application}>оставить заявку</button>
+                <button tabIndex="1" className={styles_description.credit}>в кредит от 11 000 ₽</button>
               </div>
             </div>
           </div>

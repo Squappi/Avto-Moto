@@ -13,10 +13,10 @@ function Header() {
           </div>
           <nav className={styles_nav.nav}>
             <ul className={styles_nav.list}>
-              <li className={styles_nav.item}><a href="/">Автомобили</a></li>
-              <li className={styles_nav.item}><a href="/">Контакты</a></li>
-              <li className={styles_nav.item}><a href="/">Услуги</a></li>
-              <li className={styles_nav.item}><a href="/">Вакансии</a></li>
+              <li className={styles_nav.item}><a tabIndex="1" href="/">Автомобили</a></li>
+              <li className={styles_nav.item}><a tabIndex="1" href="/">Контакты</a></li>
+              <li className={styles_nav.item}><a tabIndex="1" href="/">Услуги</a></li>
+              <li className={styles_nav.item}><a tabIndex="1" href="/">Вакансии</a></li>
             </ul>
           </nav>
         </div>
